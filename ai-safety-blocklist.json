@@ -1,0 +1,160 @@
+{
+  "name": "AI Agent Safety Blocklist",
+  "version": "1.0.0",
+  "description": "Curated list of domains where AI agents should require explicit human approval before performing interactive actions (clicking, typing, form submission). Designed for AI desktop assistants, browser automation agents, and autonomous AI tools.",
+  "maintainer": "MakoBytes.com",
+  "license": "MIT",
+  "last_updated": "2026-04-12",
+  "usage": "AI agents should check the current URL against this list before performing any write action (click, type, submit). Read-only actions (navigate, read page content, take screenshot) may be allowed at the developer's discretion. Matching should be case-insensitive substring match against the full URL.",
+  "categories": {
+    "banking": {
+      "description": "Banks, credit unions, and financial institutions",
+      "risk": "Account takeover, unauthorized transfers, balance exposure",
+      "domains": [
+        "chase.com", "bankofamerica.com", "wellsfargo.com", "citi.com", "citibank.com",
+        "usbank.com", "capitalone.com", "ally.com", "discover.com",
+        "americanexpress.com", "amex.com", "hsbc.com", "barclays.com",
+        "pnc.com", "tdbank.com", "truist.com", "regions.com",
+        "keybank.com", "citizens.com", "fifththird.com",
+        "navyfederal.org", "usaa.com", "nfcu.org",
+        "becu.org", "alliantcreditunion.org",
+        "goldmansachs.com", "jpmorgan.com", "morganstanley.com"
+      ]
+    },
+    "payments": {
+      "description": "Payment processors, money transfer, and digital wallets",
+      "risk": "Unauthorized payments, fund transfers",
+      "domains": [
+        "paypal.com", "venmo.com", "zelle.com", "cashapp.com", "wise.com",
+        "stripe.com/dashboard", "square.com/dashboard",
+        "checkout.shopify.com", "pay.google.com", "apple.com/wallet"
+      ]
+    },
+    "investments": {
+      "description": "Brokerages, trading platforms, retirement accounts",
+      "risk": "Unauthorized trades, account changes, fund withdrawal",
+      "domains": [
+        "schwab.com", "fidelity.com", "vanguard.com", "etrade.com",
+        "robinhood.com", "tdameritrade.com", "merrilledge.com",
+        "ml.com", "edwardjones.com", "interactivebrokers.com",
+        "tastyworks.com", "webull.com", "sofi.com/invest",
+        "acorns.com", "betterment.com", "wealthfront.com"
+      ]
+    },
+    "crypto": {
+      "description": "Cryptocurrency exchanges and wallets",
+      "risk": "Irreversible asset transfers, wallet compromise",
+      "domains": [
+        "coinbase.com", "binance.com", "kraken.com", "gemini.com",
+        "crypto.com", "blockchain.com", "kucoin.com", "bitfinex.com",
+        "metamask.io", "phantom.app", "ledger.com"
+      ]
+    },
+    "medical": {
+      "description": "Healthcare portals, patient records, telehealth",
+      "risk": "HIPAA-protected health information exposure",
+      "domains": [
+        "mychart.com", "myhealth.va.gov", "kp.org",
+        "labcorp.com", "questdiagnostics.com", "zocdoc.com",
+        "teladoc.com", "mdlive.com", "amwell.com",
+        "patient.portal", "healthgrades.com"
+      ]
+    },
+    "pharmacy": {
+      "description": "Online pharmacies and prescription management",
+      "risk": "Prescription data, medication history exposure",
+      "domains": [
+        "cvs.com/account", "walgreens.com/account", "express-scripts.com",
+        "optumrx.com", "caremark.com", "pillpack.com",
+        "amazon.com/pharmacy", "capsule.com"
+      ]
+    },
+    "insurance": {
+      "description": "Health, auto, home, and life insurance portals",
+      "risk": "Policy changes, claims data, personal information",
+      "domains": [
+        "geico.com", "progressive.com", "statefarm.com", "allstate.com",
+        "libertymutual.com", "nationwide.com", "farmers.com",
+        "bluecrossblueshield.com", "anthem.com", "aetna.com",
+        "cigna.com", "unitedhealthcare.com", "uhc.com", "myuhc.com",
+        "humana.com", "kaiser", "metlife.com", "prudential.com"
+      ]
+    },
+    "government": {
+      "description": "Government services, benefits, and legal systems",
+      "risk": "Identity theft, benefits fraud, legal exposure",
+      "domains": [
+        "irs.gov", "ssa.gov", "login.gov", "id.me",
+        "courts.gov", "pacer.gov", "uscis.gov", "state.gov",
+        "benefits.gov", "healthcare.gov", "medicare.gov",
+        "studentaid.gov", "fafsa.gov", "usa.gov",
+        "dmv.", "dol.gov", "sba.gov"
+      ]
+    },
+    "tax": {
+      "description": "Tax preparation and filing services",
+      "risk": "Tax return data, SSN exposure, financial fraud",
+      "domains": [
+        "turbotax.intuit.com", "hrblock.com", "taxact.com",
+        "freetaxusa.com", "taxslayer.com", "jacksonhewitt.com"
+      ]
+    },
+    "identity": {
+      "description": "Identity providers, SSO, and authentication pages",
+      "risk": "Account takeover across all connected services",
+      "domains": [
+        "accounts.google.com", "login.microsoftonline.com", "appleid.apple.com",
+        "signin.aws.amazon.com", "portal.azure.com",
+        "github.com/login", "github.com/settings",
+        "auth0.com", "okta.com", "onelogin.com",
+        "duo.com", "authy.com"
+      ]
+    },
+    "password_managers": {
+      "description": "Web-based password vaults",
+      "risk": "Complete credential exposure",
+      "domains": [
+        "vault.bitwarden.com", "my.1password.com", "lastpass.com",
+        "dashlane.com", "keeper.com", "nordpass.com"
+      ]
+    },
+    "email": {
+      "description": "Email login and management portals",
+      "risk": "Account recovery abuse, data exfiltration",
+      "domains": [
+        "mail.google.com", "outlook.live.com", "login.yahoo.com",
+        "mail.proton.me", "fastmail.com", "zoho.com/mail"
+      ]
+    },
+    "cloud_admin": {
+      "description": "Cloud infrastructure admin consoles",
+      "risk": "Server deletion, resource modification, billing changes",
+      "domains": [
+        "console.aws.amazon.com", "console.cloud.google.com",
+        "portal.azure.com", "cloud.digitalocean.com",
+        "dash.cloudflare.com", "vercel.com/dashboard",
+        "app.netlify.com", "heroku.com/apps"
+      ]
+    },
+    "social_admin": {
+      "description": "Social media account settings (not browsing)",
+      "risk": "Account lockout, unauthorized posts, privacy changes",
+      "domains": [
+        "facebook.com/settings", "twitter.com/settings", "x.com/settings",
+        "instagram.com/accounts", "linkedin.com/settings",
+        "tiktok.com/setting"
+      ]
+    },
+    "url_patterns": {
+      "description": "URL path patterns that indicate sensitive pages on ANY domain",
+      "risk": "Generic authentication and financial transaction pages",
+      "patterns": [
+        "/login", "/signin", "/sign-in", "/auth",
+        "/account/security", "/account/password",
+        "/banking", "/transfer", "/payment",
+        "/checkout", "/billing",
+        "/admin", "/dashboard/settings"
+      ]
+    }
+  }
+}
